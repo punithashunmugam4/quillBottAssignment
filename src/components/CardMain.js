@@ -2,6 +2,7 @@ import React from "react";
 import ClearIcon from "@mui/icons-material/Clear";
 import CheckIcon from "@mui/icons-material/Check";
 import DiamondIcon from "@mui/icons-material/Diamond";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import {
   Table,
@@ -12,7 +13,7 @@ import {
 } from "@mui/material";
 import ButtonCompo from "./ButtonCompo";
 
-const CardMain = ({ free, headerColor, bottemText, content }) => {
+const CardMain = ({ free, headerColor, content }) => {
   return (
     <div
       style={{
@@ -66,7 +67,7 @@ const CardMain = ({ free, headerColor, bottemText, content }) => {
             <TableCell sx={{ paddingLeft: "2em" }}>
               <ButtonCompo
                 text={free ? "Sign Up - It's Free" : "Upgrade to Premium"}
-                colorType={"success"}
+                colorType={free ? "success" : "warning"}
                 rgbacolor={!free ? "rgba(230, 152, 8, 1)" : null}
               />
             </TableCell>
@@ -79,23 +80,37 @@ const CardMain = ({ free, headerColor, bottemText, content }) => {
                   height: "25px",
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "space-between",
                 }}
               >
-                {feature.availability ? (
-                  <CheckIcon sx={{ color: `${headerColor}` }}></CheckIcon>
-                ) : (
-                  <ClearIcon sx={{ color: "red" }}></ClearIcon>
+                <div className="card-item">
+                  {feature.availability ? (
+                    <CheckIcon sx={{ color: `${headerColor}` }}></CheckIcon>
+                  ) : (
+                    <ClearIcon sx={{ color: "red" }}></ClearIcon>
+                  )}
+                  &nbsp;&nbsp;
+                  <p
+                    style={{
+                      margin: "0",
+                      marginTop: "5px",
+                      fontSize: "1em",
+                    }}
+                  >
+                    {feature.detail}
+                  </p>
+                </div>
+                {!free && (
+                  <InfoOutlinedIcon
+                    sx={{
+                      color: "#ccc",
+                      float: "right",
+                      "&:hover": {
+                        color: "rgba(230, 152, 8, 1)",
+                      },
+                    }}
+                  ></InfoOutlinedIcon>
                 )}
-                &nbsp;&nbsp;
-                <p
-                  style={{
-                    margin: "0",
-                    marginTop: "5px",
-                    fontSize: "1em",
-                  }}
-                >
-                  {feature.detail}
-                </p>
               </TableCell>
             </TableRow>
           ))}

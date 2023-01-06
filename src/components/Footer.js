@@ -3,7 +3,7 @@ import ProgressFooter from "./ProgressFooter";
 
 const Footer = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div className="footer">
       <ProgressFooter
         progressValue={75}
         value={"75%"}

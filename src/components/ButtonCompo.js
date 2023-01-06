@@ -10,6 +10,9 @@ const ButtonCompo = ({ text, colorType, rgbacolor }) => {
         borderRadius: "20px",
         fontSize: "1.1rem",
         backgroundColor: `${rgbacolor}`,
+        "&:hover": {
+          backgroundColor: `${rgbacolor}`,
+        },
       }}
       variant="contained"
       color={colorType && colorType}

@@ -19,7 +19,7 @@ const OverView = ({ view }) => {
     return () => clearInterval(changing);
   }, [imageUrl, val]);
   return (
-    <div>
+    <div className="section1">
       <Box
         display={"flex"}
         justifyContent="center"
@@ -43,7 +43,7 @@ const OverView = ({ view }) => {
         margin="2em"
       >
         <Imageloop imageUrl={imageUrl} />
-        <Box width={"540px"}>
+        <Box width={"50%"}>
           {content.map((item, index) => (
             <Phrase
               key={index}

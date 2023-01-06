@@ -44,7 +44,7 @@ const App = () => {
         <Typography variant="h5" paddingTop={"2em"} paddingBottom={"0.6em"}>
           Write better, faster, and clearer instantly
         </Typography>
-        <Typography width={"30%"} paddingBottom={"2em"}>
+        <Typography width={"30%"} paddingBottom={"2em"} textAlign={"center"}>
           QuillBot is trusted by students, professional writers, and business
           people who want to write more effectively.
         </Typography>
